@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Keyboard</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <h1 style="text-align: center; color:brown;">Virtual Keyboard</h1>
+    <div class="textContainer">
+    </div>
+    <div class="keyboard">
+        <div class="row">
+            <div class="key">1</div>
+            <div class="key">2</div>
+            <div class="key">3</div>
+            <div class="key">4</div>
+            <div class="key">5</div>
+            <div class="key">6</div>
+            <div class="key">7</div>
+            <div class="key">8</div>
+            <div class="key">9</div>
+            <div class="key">0</div>   
+            <div class="key delete"><i class="fa-solid fa-delete-left"></i></div>
+        </div>
+        <div class="row">
+            <div class="key">q</div>
+            <div class="key">w</div>
+            <div class="key">e</div>
+            <div class="key">r</div>
+            <div class="key">t</div>
+            <div class="key">y</div>
+            <div class="key">u</div>
+            <div class="key">i</div>
+            <div class="key">o</div>
+            <div class="key">p</div>
+        </div>
+        <div class="row">
+            <div class="key capslock">CapsLock</div>
+            <div class="key">a</div>
+            <div class="key">s</div>
+            <div class="key">d</div>
+            <div class="key">f</div>
+            <div class="key">g</div>
+            <div class="key">h</div>
+            <div class="key">j</div>
+            <div class="key">k</div>
+            <div class="key">l</div>
+            <div class="key enter">Enter</div>
+        </div>
+        <div class="row last">
+            <div class="special-character-button">
+                <button>S C</button>
+            </div>
+            <div class="key">z</div>
+            <div class="key">x</div>
+            <div class="key">c</div>
+            <div class="key">v</div>
+            <div class="key">b</div>
+            <div class="key">n</div>
+            <div class="key">m</div>
+        </div>
+        <div class="row">
+            <div class="key space"></div>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+
+<script>
+
+const scButton = document.querySelector('.special-character-button button');
+scButton.addEventListener('click', () => {
+  // Get all the letter keys
+  const letterKeys = document.querySelectorAll('.keyboard .key:not(.space):not(.delete):not(.enter):not(.capslock):not(.number)');
+
+  // Get the current state of the keyboard
+  const isLetters = letterKeys[0].textContent === 'q';
+
+  // Toggle the state of the keyboard
+  if (isLetters) {
+    // Replace the letter keys with special characters
+    const specialCharacters = ['1','2','3','4','5','6','7','8','9','0','!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '+', '=', '{', '}', '[', ']', '|', '\\', ';', ':', ',', '.', '/', '?'];
+
+    letterKeys.forEach((key, index) => {
+      key.textContent = specialCharacters[index];
+    });
+  } else {
+    // Replace the special characters with letter keys
+    const letters = ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'z', 'x', 'c', 'v', 'b', 'n', 'm'];
+
+    letterKeys.forEach((key, index) => {
+      key.textContent = letters[index];
+    });
+  }
+});
+
+
+</script>
+
+</html>

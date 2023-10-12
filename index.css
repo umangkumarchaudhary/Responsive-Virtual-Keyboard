@@ -1,0 +1,95 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: lightblue;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100vh;
+    font-size: 1.5rem;
+  }
+  
+  .textContainer {
+    height: 15vh;
+    width: 90vw;
+    background: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 10px 1px grey;
+    outline: none;
+    padding: 2rem;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column-reverse;
+    font-family: sans-serif;
+    font-size: 1.2rem;
+  }
+  
+  .keyboard {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 50vh;
+    width: 70vw;
+    background-color: black;
+    border-radius: 1rem;
+    color: aliceblue;
+    
+  }
+  .keyboard {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2),
+      0 6px 10px 0 rgba(0, 0, 0, 0.12),
+      0 10px 12px 0 rgba(0, 0, 0, 0.08);
+  }
+  
+  
+  .row {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0.5rem 0;
+  }
+  
+  .last {
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  .space {
+    background: grey;
+    width: 50%;
+    height: 2rem;
+  }
+  
+  .key {
+    cursor: pointer;
+    padding: 0.5rem;
+    border: 1px solid grey;
+    border-radius: 3px;
+    font-family: sans-serif;
+    font-size: 1.2rem;
+  }
+  
+  .key:active {
+    background: lightgrey;
+  }
+  
+  .active {
+    background-color: whitesmoke;
+  }
+
+  @media (max-width: 576px) {
+    .keyboard {
+      width: 100%;
+    }
+  
+    .row {
+      flex-wrap: wrap;
+    }
+  
+    .last {
+      width: 100%;
+    }
+  }
